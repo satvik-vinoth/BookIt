@@ -33,7 +33,7 @@ A full-stack web application that allows users to discover, explore, and book cu
 ## 📁 Folder Structure
 
 ```
-📦 highway-delite-booking
+BookIt
 ├── backend/
 ├── config/
 │   │   ├── db.js
@@ -69,3 +69,81 @@ A full-stack web application that allows users to discover, explore, and book cu
 |
 └── README.md
 ```
+
+## Environment Variables
+
+Create a file named .env in both your backend and frontend directories.
+
+### Backend .env
+
+```
+PORT=5000
+MONGO_URI=mongodb+srv://<your-username>:<your-password>@cluster.mongodb.net/highway
+```
+
+### Frontend .env.local
+
+```
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5000/api
+```
+
+## Setup and Run Instructions
+
+### 1. Clone the Repository
+```
+git clone https://github.com/<your-username>/highway-delite-booking.git
+cd highway-delite-booking
+```
+
+### 2. Setup Backend
+```
+cd backend
+npm install
+```
+
+### 3.Create .env file
+
+### 4. Run the Backend Server
+```
+npm run dev
+```
+
+Your backend will start on:
+```
+http://localhost:5000
+```
+
+### 5. Setup Frontend
+```
+cd ../frontend
+npm install
+```
+### 6.Create .env.local file
+
+### 7. Run the Frontend App
+```
+npm run dev
+```
+
+Frontend will start on:
+```
+http://localhost:3000
+```
+
+## Promo Code Logic
+
+| Code Example | Type    | Description                      |
+| ------------ | ------- | -------------------------------- |
+| `FLAT100`    | Flat    | Subtracts ₹100 from total        |
+| `SAVE10`     | Percent | Applies 10% discount on subtotal |
+
+## Pages Overview
+
+| Page               | Description                                               |
+| ------------------ | --------------------------------------------------------- |
+| `/`                | Lists all experiences with search functionality           |
+| `/experience/[id]` | Displays experience details and available slots           |
+| `/checkout`        | Handles user input, promo validation, and booking summary |
+| `/result`          | Displays booking confirmation with Ref ID                 |
+
+
